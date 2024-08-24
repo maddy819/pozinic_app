@@ -132,17 +132,31 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="address">Privacy Policy:</label>
+                                <textarea name="privacy_policy" class="form-control {{ $errors->has('privacy_policy') ? ' is-invalid' : '' }}" id="privacy_policy" placeholder="Address">{{ $setting->privacy_policy }}</textarea>
+                                @if ($errors->has('privacy_policy'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('privacy_policy') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Terms and conditions:</label>
+                                <textarea name="terms_condition" class="form-control {{ $errors->has('terms_condition') ? ' is-invalid' : '' }}" id="terms_condition" placeholder="Address">{{ $setting->terms_condition }}</textarea>
+                                @if ($errors->has('terms_condition'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('terms_condition') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
                                 <input type="submit" id="send_form" name="save" class="btn btn-primary" value="Update Settings">
                             </div>
                         </div>
                     </div>
                 </form>
-                @if(Session::has('message'))
-                    <div class="alert alert-success alert-dismissible">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        {{Session::get('message')}}
-                    </div>
-                @endif
             </div>
             <!-- /.card-body -->
           </div>
@@ -155,4 +169,60 @@
     <!-- /.content -->
 
     <!-- page script -->
+@endsection
+
+@section('script')
+
+@if(Session::has('error'))
+    <script>
+      toastr.error('{{Session::get("error")}}');
+    </script>
+@endif
+
+@if(Session::has('success'))
+    <script>
+      toastr.success('{{Session::get("success")}}');
+    </script>
+@endif
+
+<script>
+    $(function () {
+        $('#privacy_policy').summernote({
+            height: 150,
+            placeholder: 'Privacy Policy',
+            lineHeights: ['0.38', '1.38'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18'],
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'color']],
+                ['table', ['table']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['height', ['height']]
+            ]
+        });
+
+        $('#terms_condition').summernote({
+            height: 150,
+            placeholder: 'Terms and conditions',
+            lineHeights: ['0.38', '1.38'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18'],
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph', 'color']],
+                ['table', ['table']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['height', ['height']]
+            ]
+        });
+    });
+</script>
+
 @endsection

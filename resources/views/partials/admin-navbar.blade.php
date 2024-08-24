@@ -12,13 +12,29 @@
       
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
+          @if($setting->logo)
+            @if(file_exists('uploads/'.$setting->logo))
+                <img class="user-image img-circle elevation-2" src="{{asset('uploads/'.$setting->logo)}}" alt="User profile picture">
+            @else
+                <img class="user-image img-circle elevation-2" src="{{asset('uploads/default-placeholder.png')}}" alt="User profile picture">
+            @endif
+          @else
+              <img class="user-image img-circle elevation-2" src="{{asset('uploads/default-placeholder.png')}}" alt="User profile picture">
+          @endif
           <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
           <li class="user-header bg-primary">
-            <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            @if($setting->logo)
+              @if(file_exists('uploads/'.$setting->logo))
+                  <img class="user-image img-circle elevation-2" src="{{asset('uploads/'.$setting->logo)}}" alt="User profile picture">
+              @else
+                  <img class="user-image img-circle elevation-2" src="{{asset('uploads/default-placeholder.png')}}" alt="User profile picture">
+              @endif
+            @else
+                <img class="user-image img-circle elevation-2" src="{{asset('uploads/default-placeholder.png')}}" alt="User profile picture">
+            @endif
             <p>
               {{ Auth::user()->name }}
               <small>Joined {{ Auth::user()->created_at->diffForHumans() }}</small>
@@ -27,8 +43,8 @@
           <!-- Menu Footer-->
           <li class="user-footer">
             <a href="{{ route('admin-change-password') }}" class="btn btn-default btn-flat">{{ __('Change Password') }}</a>
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-default btn-flat float-right">{{ __('Logout') }}</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();" class="btn btn-default btn-flat float-right">{{ __('Logout') }}</a>
+            <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
             </form>
           </li>

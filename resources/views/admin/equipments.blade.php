@@ -29,25 +29,12 @@
             <a class="btn btn-sm btn-success float-right" href="#" data-toggle="modal" data-target="#modal-equipment">Post Equipment</a>
             </div>
             <div class="card-body">
-              @if(Session::has('success'))
-                  <div class="alert alert-success alert-dismissible">
-                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      {{Session::get('success')}}
-                  </div>
-              @endif
-
-              @if(Session::has('error'))
-                  <div class="alert alert-success alert-dismissible">
-                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      {{Session::get('error')}}
-                  </div>
-              @endif
               <table id="example1" class="table table-sm table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Slug</th>
                     <th>Weight</th>
-                    <th>Description</th>
                     <th>created At</th>
                     <th>Action</th>
                   </tr>
@@ -56,13 +43,17 @@
                   @foreach($equipments as $eq)
                   <tr>
                     <td>{{ $eq->name }}</td>
+                    <td>{{ $eq->slug }}</td>
                     <td>{{ $eq->weight }}</td>
-                    <td>{!! $eq->description !!}</td>
                     <td>{{ $eq->created_at->diffForHumans() }}</td>
                     <td>
-                      <form action="javascript:void(0)">@csrf
-                          <a class="btn btn-xs btn-primary" href="#" onclick="edit_equipment({{ $eq->id }})"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                      </form>
+                      <div class="dropdown">
+                        <button type="button" class="btn btn-icon btn-sm btn-secondary btn-rounded btn-outline-secondary" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a title="Edit Equipment" class="dropdown-item" href="#" onclick="edit_equipment({{ $eq->id }})">Edit Equipment</a>
+                          <a title="Delete Equipment" class="dropdown-item" href="{{ route('admin-delete-equipment', [$eq->id]) }}" onclick="return confirm('Are you sure?')">Delete Equipment</a>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   @endforeach
@@ -70,8 +61,8 @@
                 <tfoot>
                   <tr>
                     <th>Name</th>
+                    <th>Slug</th>
                     <th>Weight</th>
-                    <th>Description</th>
                     <th>created At</th>
                     <th>Action</th>
                   </tr>
@@ -112,16 +103,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title">Weight:</label>
-                                    <input type="text" name="weight" class="form-control" id="weight" placeholder="Weight" required>
+                                    <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight" required>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="description">Description:</label>
-                                    <textarea name="description" class="form-control" id="description" placeholder="Description" required></textarea>
+                                    <textarea name="description" class="form-control" id="description" placeholder="Description"></textarea>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -141,6 +132,19 @@
 @endsection
 
 @section('script')
+
+@if(Session::has('error'))
+    <script>
+      toastr.error('{{Session::get("error")}}');
+    </script>
+@endif
+
+@if(Session::has('success'))
+    <script>
+      toastr.success('{{Session::get("success")}}');
+    </script>
+@endif
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -155,21 +159,30 @@
     $('#description').summernote({
       height: 100,
       placeholder: 'Description',
-      dialogsInBody: true,
+      lineHeights: ['0.38', '1.38'],
+      fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18'],
       toolbar: [
-          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['fontname', ['fontname']],
           ['fontsize', ['fontsize']],
           ['color', ['color']],
-          ['para', ['ul','ol','paragraph']],
-          ["view", ["fullscreen", "codeview"]]
-      ],
+          ['para', ['ul', 'ol', 'paragraph', 'color']],
+          ['table', ['table']],
+          ['view', ['fullscreen', 'codeview', 'help']],
+          ['height', ['height']]
+      ]
+    });
+
+    $('#modal-equipment').on('hidden.bs.modal', function (e) {
+      $('#equipment_post').trigger('reset');
+      $('#description').summernote('reset');
     });
   });
 
   $("#equipment_post").validate({
     submitHandler: function(form) {
       $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
-      $('#send_form').val('Sending..');
 
       var form = $('#equipment_post')[0];
       var data = new FormData(form);
@@ -183,7 +196,6 @@
         contentType: false,
         cache: false,
         success: function( response ) {
-          $('#send_form').val('Submitted');
           //console.log(response);
           if(response.success) {
             $('#equipment_post').trigger('reset');
@@ -213,6 +225,7 @@
       dataType: "json",
       success: function(detail){
         console.log(detail);
+        $('#equipment_post').trigger('reset');
         $("#id").val(detail.id);
         $("#name").val(detail.name);
         $("#description").summernote('code', detail.description);

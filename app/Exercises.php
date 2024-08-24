@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Workouts;
+use App\Category;
 Use App\Equipments;
 use App\ExerciseVariations;
 
@@ -10,9 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 class Exercises extends Model
 {
     protected $guarded = [];
+    protected $hidden = ['pivot'];
 
     public function getRouteKeyName(){
         return 'code';
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 
     public function workouts() {
@@ -25,5 +31,15 @@ class Exercises extends Model
 
     public function exerciseVariation() {
         return $this->hasMany(ExerciseVariations::class, 'exercise_code', 'code');
+    }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($exercise) { 
+            dd($exercise);
+            $exercise->workouts()->each(function($workout) {
+                $workout->delete(); // <-- direct deletion
+            });
+        });
     }
 }

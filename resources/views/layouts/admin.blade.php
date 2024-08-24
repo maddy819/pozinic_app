@@ -25,6 +25,14 @@
     color: black;
   }
 
+  table.dataTable tr th.select-checkbox.selected::after {
+    content: "✔";
+    margin-top: -11px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: rgb(176, 190, 217) 1px 1px, rgb(176, 190, 217) -1px -1px, rgb(176, 190, 217) 1px -1px, rgb(176, 190, 217) -1px 1px;
+  }
+
   @media (min-width: 768px) {
     body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
         transition: margin-left .3s ease-in-out;
@@ -36,11 +44,16 @@
     flex: 1 1 auto;
     padding: 0.5rem;
   }
+
+  .dropdown-menu.show {
+    display: block;
+    z-index: 9999 !important;
+  }
   </style>
 
 @yield('style')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" id="body" onkeydown="myKeyPress(event)">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -65,4 +78,36 @@
 
   @yield('script')
 </body>
+<script>
+	$(document).ajaxStart(function(){
+		$.LoadingOverlay("show");
+	});
+	$(document).ajaxStop(function(){
+		$.LoadingOverlay("hide");
+	});
+
+  // function myKeyPress(e){
+  //   var keynum;
+
+  //   if(e.target.id == "body") {
+  //     if(window.event) { // IE                  
+  //       keynum = e.keyCode;
+  //     } else if(e.which){ // Netscape/Firefox/Opera                 
+  //       keynum = e.which;
+  //     }
+
+  //     if(keynum == 8) {
+  //       window.history.go(-1);
+  //     }
+
+  //     if(String.fromCharCode(keynum) == "e") {
+  //       window.location.href = "{{ route('admin-exercises') }}";
+  //     } else if(String.fromCharCode(keynum) == "w") {
+  //       window.location.href = "{{ route('admin-workouts') }}";
+  //     } else if(String.fromCharCode(keynum) == "p") {
+  //       window.location.href = "{{ route('admin-programs') }}";
+  //     }
+  //   }
+  // }
+</script>
 </html>

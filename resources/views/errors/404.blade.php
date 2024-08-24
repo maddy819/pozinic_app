@@ -70,6 +70,8 @@
 
                         <h6>Page not found - poznic.com</h6>
 
+                        <a class="btn btn-default" href="{{ url('/admin/dashboard') }}">Go Back</a>
+
                     </div>
 
                 </div>

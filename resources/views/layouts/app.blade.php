@@ -42,7 +42,7 @@
     }
 
     body { 
-        background: url("{{ asset('1108004.jpg') }}") no-repeat center center fixed; 
+        background: url("{{ asset('_MG_2759.jpg') }}") no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -51,7 +51,7 @@
 
     .card {
         top: 20%;
-        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+        background: rgb(204, 204, 204);
         background: rgba(204, 204, 204, 0.8);
     }
     </style>

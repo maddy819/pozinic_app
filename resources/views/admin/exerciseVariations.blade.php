@@ -66,19 +66,6 @@
                     </tr>
                 </tfoot>
             </table>
-            @if(Session::has('success'))
-                <div class="alert alert-success alert-dismissible">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    {{Session::get('success')}}
-                </div>
-            @endif
-
-            @if(Session::has('error'))
-                <div class="alert alert-success alert-dismissible">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    {{Session::get('error')}}
-                </div>
-            @endif
             </div>
             <!-- /.card-body -->
           </div>
@@ -115,21 +102,21 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title">Duration:</label>
-                                    <input type="text" name="duration" class="form-control" id="duration" placeholder="Duration" required>
+                                    <input type="text" name="duration" data-inputmask='"mask": "99:99"' data-mask class="form-control" class="form-control" id="duration" placeholder="Duration" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title">Reps:</label>
-                                    <input type="text" name="reps" class="form-control" id="reps" placeholder="Reps" required>
+                                    <input type="number" name="reps" class="form-control" id="reps" placeholder="Reps" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="category" class="filterable">Rest Duration:</label>
-                                    <input type="text" name="rest_duration" class="form-control" id="rest_duration" placeholder="Rest Duration" required>
+                                    <input type="text" name="rest_duration" data-inputmask='"mask": "99:99"' data-mask class="form-control" id="rest_duration" placeholder="Rest Duration" required>
                                 </div>
                             </div>
 
@@ -151,6 +138,19 @@
 @endsection
 
 @section('script')
+
+@if(Session::has('error'))
+    <script>
+      toastr.error('{{Session::get("error")}}');
+    </script>
+@endif
+
+@if(Session::has('success'))
+    <script>
+      toastr.success('{{Session::get("success")}}');
+    </script>
+@endif
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -178,12 +178,13 @@
       placeholder: 'Instruction',
     });
 
+    $('#duration').inputmask('mm:ss', { 'placeholder': 'mm:ss' });
+    $('#rest_duration').inputmask('mm:ss', { 'placeholder': 'mm:ss' });
   });
 
   $("#variation_post").validate({
     submitHandler: function(form) {
       $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
-      $('#send_form').val('Sending..');
 
       var form = $('#variation_post')[0];
       var data = new FormData(form);
@@ -197,7 +198,6 @@
         contentType: false,
         cache: false,
         success: function( response ) {
-          $('#send_form').val('Submitted');
           //console.log(response);
           if(response.success) {
             $('#variation_post').trigger('reset');

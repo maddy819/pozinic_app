@@ -46,8 +46,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException){
-            return redirect('/');
+        if ($this->isHttpException($exception)) {
+            $statusCode = $exception->getStatusCode();
+            switch ($statusCode) {
+                case '404':
+                    return response()->json(['success' => false, 'message' => 'Route Not Found..!!'], 404);
+                case '500';
+                    return response()->json(['success' => false, 'message' => 'Internal Server Error..!!'], 500);
+            }
         }
 
         return parent::render($request, $exception);

@@ -11,11 +11,15 @@
         "php": "^7.2",
         "codedge/laravel-fpdf": "^1.7",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^6.0",
         "laravel/helpers": "^1.4",
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
-        "twilio/sdk": "^6.10"
+        "mpociot/laravel-apidoc-generator": "^4.8",
+        "twilio/sdk": "^6.10",
+        "tymon/jwt-auth": "dev-develop",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

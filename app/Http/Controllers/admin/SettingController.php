@@ -67,10 +67,16 @@ class SettingController extends Controller
             'website' => request('website'),
             'description' => request('description'),
             'tags' => request('tags'),
-            'address' => request('address')
+            'address' => request('address'),
+            'privacy_policy' => request('privacy_policy'),
+            'terms_condition' => request('terms_condition')
         );
 
-        Settings::where('id', $id)->update($setting);
-        return redirect()->back()->with('message','Settings Sucessfully Updated!');
+        $res = Settings::where('id', $id)->update($setting);
+        if($res) {
+            return redirect()->back()->with('success','Settings Sucessfully Updated!');
+        } else {
+            return redirect()->back()->with('error','Unable to update settings!');
+        }
     }
 }

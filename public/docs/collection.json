@@ -1,0 +1,2553 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Poznic API",
+        "_postman_id": "8d8ad22f-2f8f-48b4-a2c7-3c124ab20b1d",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authorization",
+            "description": "",
+            "item": [
+                {
+                    "name": "APIs for user login",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/auth\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"example@domain.com\",\n    \"type\": \"social\\\/normal\",\n    \"password\": \"officiis\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for user registration",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/auth\/register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"jhon doe\",\n    \"email\": \"example@domain.com\",\n    \"image\": \"praesentium\",\n    \"type\": \"social\\\/normal\",\n    \"password\": \"illo\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for refreshing user token",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/refresh\/token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for forgot password",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/forgot\/password",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"example@domain.com\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for logging out the user",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/logout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blogs",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting All blogs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/blogs",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for saving blogs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/blogs",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"et\",\n    \"type\": \"et\",\n    \"image\": \"rerum\",\n    \"description\": \"ut\",\n    \"tags\": \"eos\",\n    \"visible\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Contacts",
+            "description": "",
+            "item": [
+                {
+                    "name": "APIs for saving contacts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/contacts",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"qui\",\n    \"email\": \"quae\",\n    \"subject\": \"officia\",\n    \"description\": \"cum\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Equipments",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/equipments\/all",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/equipments\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Exercise",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/favourite\/exercises",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/exercises",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/recent\/exercises",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/exercises",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/exercise\/featured\/category",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/exercise\/featured\/category",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/exercise\/all",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/exercise\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/exercise\/single\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/exercise\/single\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "voluptatum",
+                                    "description": "The ID of the exercise."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Faq",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting All faq's",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/faqs",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Featured",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/featured\/resources",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/featured\/resources",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Filters",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting All exercise filters",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/exercise",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for Filtering All exercises",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/exercise",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"maiores\",\n    \"duration\": [],\n    \"focus_area\": [],\n    \"specific_muscles\": [],\n    \"good_for\": [],\n    \"type\": [],\n    \"level\": [],\n    \"equipment\": []\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting All workout filters",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/workout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for Filtering All workouts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/workout",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"accusamus\",\n    \"duration\": [],\n    \"focus_area\": [],\n    \"good_for\": [],\n    \"level\": [],\n    \"equipment\": []\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting All split filters",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/split",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for Filtering All split",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/split",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"sit\",\n    \"duration\": [],\n    \"focus_area\": [],\n    \"good_for\": [],\n    \"level\": [],\n    \"equipment\": []\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting All program filters",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/program",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for Filtering All programs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/program",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"suscipit\",\n    \"duration\": [],\n    \"focus_area\": [],\n    \"good_for\": [],\n    \"level\": [],\n    \"equipment\": []\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting All strech filters",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/strech",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for Filtering All streches",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/strech",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"non\",\n    \"duration\": [],\n    \"focus_area\": [],\n    \"specific_muscles\": [],\n    \"good_for\": [],\n    \"type\": [],\n    \"level\": [],\n    \"equipment\": []\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/filter\/nutrition",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/filter\/nutrition",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"calorie\": 12\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nutritions",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting All nutritions",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/nutritions",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/nutritions\/single\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/nutritions\/single\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "numquam",
+                                    "description": "The ID of the nutrition."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Program",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/favourite\/programs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/programs",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting recent programs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/programs",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/programs\/all",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/programs\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/programs\/single\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/programs\/single\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "pariatur",
+                                    "description": "The ID of the program."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting single program duration",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/programs\/duration\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "incidunt",
+                                    "description": "The ID of the program."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/programs\/workouts\/day\/{id}\/{day}\/{duration}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/programs\/workouts\/day\/:id\/:day\/:duration",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "facilis",
+                                    "description": "The ID of the program."
+                                },
+                                {
+                                    "id": "day",
+                                    "key": "day",
+                                    "value": "at",
+                                    "description": "The day of the program."
+                                },
+                                {
+                                    "id": "duration",
+                                    "key": "duration",
+                                    "value": "adipisci",
+                                    "description": "The duration of the program."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Settings",
+            "description": "",
+            "item": [
+                {
+                    "name": "APIs for getting app settings",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/settings",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Signup Questions",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/signup\/questions",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/signup\/questions",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Splits",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/favourite\/splits",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/splits",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/recent\/splits",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/splits",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/splits\/all",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/splits\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/splits\/single\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/splits\/single\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "odit",
+                                    "description": "The ID of the split."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting single split duration",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/splits\/duration\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "asperiores",
+                                    "description": "The ID of the split."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/splits\/workouts\/day\/{id}\/{day}\/{duration}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/splits\/workouts\/day\/:id\/:day\/:duration",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "libero",
+                                    "description": "The ID of the split."
+                                },
+                                {
+                                    "id": "day",
+                                    "key": "day",
+                                    "value": "omnis",
+                                    "description": "The day of the split."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Strech",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/favourite\/streches",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/streches",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/recent\/streches",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/streches",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/strech\/all",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/strech\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/strech\/single\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/strech\/single\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "cum",
+                                    "description": "The ID of the strech."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "User management",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/questionset1\/update",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/questionset1\/update",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"gender\": \"male\",\n    \"age\": \"32\",\n    \"level\": \"\\\"Beginner\\\"\",\n    \"height\": \"5.6\",\n    \"weight\": \"67\",\n    \"goal\": \"body building\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/questionset2\/update",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/questionset2\/update",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"questions\": \"[1, 2]\",\n    \"answers\": \"[\\\"A person's ability to exercise continuously for extended periods without needing to think\\\", \\\"Extreme tiredness, typically resulting from mental or physical exertion or illness\\\"]\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for user program subscription",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/program\/subscribe",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"program_id\": 4\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for getting user program subscriptions",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/program\/subscriptions",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for saving user program subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/program\/subscription\/progress",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"subscription_id\": 8,\n    \"workout_id\": 11,\n    \"day\": 15\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting user program subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/program\/subscription\/progress\/:subscriptionId",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "subscriptionId",
+                                    "key": "subscriptionId",
+                                    "value": "similique",
+                                    "description": "The id of the subscription."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for resetting user program subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/program\/subscription\/reset\/:subscriptionId",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "subscriptionId",
+                                    "key": "subscriptionId",
+                                    "value": "consequatur",
+                                    "description": "The id of the subscription."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for user split subscription",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/split\/subscribe",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"split_id\": 4\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for getting user split subscriptions",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/split\/subscriptions",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "APIs for saving user split subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/split\/subscription\/progress",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"subscription_id\": 9,\n    \"workout_id\": 12,\n    \"day\": 11\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting user split subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/split\/subscription\/progress\/:subscriptionId",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "subscriptionId",
+                                    "key": "subscriptionId",
+                                    "value": "minus",
+                                    "description": "The id of the subscription."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for resetting user split subscription progress",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/split\/subscription\/reset\/:subscriptionId",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "subscriptionId",
+                                    "key": "subscriptionId",
+                                    "value": "vel",
+                                    "description": "The id of the subscription."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/favourite\/resource",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/resource",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"exercise_id\": 1,\n    \"workout_id\": 2,\n    \"program_id\": 4,\n    \"split_id\": 3,\n    \"strech_id\": 3\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/recent\/resource",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/resource",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"exercise_id\": 1,\n    \"workout_id\": 2,\n    \"program_id\": 4,\n    \"split_id\": 3,\n    \"strech_id\": 3\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/unfavourite\/resource",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/unfavourite\/resource",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"exercise_id\": 1,\n    \"workout_id\": 2,\n    \"program_id\": 4,\n    \"split_id\": 3,\n    \"strech_id\": 3\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/profile\/update",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/profile\/update",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"shubham agrawal\",\n    \"mobile\": \"9713879633\",\n    \"gender\": \"male\",\n    \"age\": \"32\",\n    \"level\": \"beginner\",\n    \"height\": \"5.6\",\n    \"weight\": \"55\",\n    \"goal\": \"bodybulding\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/profile\/update\/pic",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/profile\/update\/pic",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"image\": \"aut\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/profile",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/profile",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Videos",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting All videos",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/videos",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Workout",
+            "description": "",
+            "item": [
+                {
+                    "name": "API for getting Favourite workouts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/favourite\/workouts",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting recent workouts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/recent\/workouts",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting All workouts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/workouts\/all",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting single workout duration",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/workouts\/duration\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "et",
+                                    "description": "The ID of the workout."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting single workouts By Variation",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/workouts\/single\/variation\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "est",
+                                    "description": "The ID of the workout."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"duration\": 13\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "playlist",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/playlist\/create",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/playlist\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"aliquid\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/playlist\/update",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/playlist\/update",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 1,\n    \"title\": \"My playlist\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user\/playlist\/delete",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/playlist\/delete",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting all or single user playlist",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/user\/playlist\/:playlist",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/saved\/exercises",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/saved\/exercises",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"playlistId\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "API for getting Saved workouts",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/saved\/workouts",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"playlistId\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/saved\/programs",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/saved\/programs",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"playlistId\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/saved\/splits",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/saved\/splits",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"playlistId\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/saved\/streches",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/saved\/streches",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"playlistId\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/save\/resource",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/save\/resource",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"exercise_id\": 1,\n    \"workout_id\": 2,\n    \"program_id\": 4,\n    \"split_id\": 3,\n    \"strech_id\": 3,\n    \"playlist_id\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/playlist\/unsave\/resource",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "phpstack-250897-1931063.cloudwaysapps.com\/",
+                            "path": "api\/playlist\/unsave\/resource",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"exercise_id\": 1,\n    \"workout_id\": 2,\n    \"program_id\": 4,\n    \"split_id\": 3,\n    \"strech_id\": 3,\n    \"playlist_id\": 1\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

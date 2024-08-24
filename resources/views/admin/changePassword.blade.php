@@ -65,20 +65,25 @@
                             </div>
                         </form>
                     </div>
-                    @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{Session::get('success')}}
-                        </div>
-                    @endif
-
-                    @if(Session::has('error'))
-                        <div class="alert alert-success">
-                            {{Session::get('error')}}
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
     </section>
+
+@endsection
+
+@section('script')
+
+@if(Session::has('error'))
+    <script>
+      toastr.error('{{Session::get("error")}}');
+    </script>
+@endif
+
+@if(Session::has('success'))
+    <script>
+      toastr.success('{{Session::get("success")}}');
+    </script>
+@endif
 
 @endsection
